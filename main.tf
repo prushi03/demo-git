@@ -8,3 +8,11 @@ esource "aws_vpc" "terraform_test_vpc" {
     Name = "dev_terraform_test_vpc"
   }
 }
+
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "terraform_test_internet_getway"
+  }
+}
